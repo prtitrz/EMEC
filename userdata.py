@@ -6,6 +6,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtXml import *
 
 CODEC = "utf-8"
+DATEFORMAT = "ddd MMM d, yyyy"
 
 class Data(object):
     """docstring for Data"""
@@ -20,10 +21,10 @@ class Data(object):
 class DataContainer(object):
     """docstring for DataContainer"""
     def __init__(self):
-        self.__datas = {}
+        self.__datas = []
 
     def clear(self):
-        self.__datas = {}
+        self.__datas = []
 
     def dataFromid(self, id):
         """Returns the data with the given Python ID."""
@@ -31,8 +32,12 @@ class DataContainer(object):
 
     def add(self, data):
     #    self.__datas[id(data)] = data
-        self.num = len(self.__datas)
-        self.__datas[self.num] = data
+    #    self.num = len(self.__datas)
+    #    self.__datas[self.num] = data
+        self.__datas.append(data)
+
+    def index(self, data):
+        return self.__datas.index(data)
 
     def __iter__(self):
     #    for pair in iter(self.__datas):

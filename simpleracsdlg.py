@@ -47,6 +47,45 @@ class SimpleracsDlg(QDialog,
     def on_upasswordLineEdit_textEdited(self, text):
         self.updateUi()
 
+    @pyqtSignature("QTableWidgetItem*")
+    def on_table_itemClicked(self):
+        data = self.currentData()
+        self.accountLabel.setText(data.account)
+
+    def updateTable(self, current=None):
+    #    self.table.clear()
+        self.table.setRowCount(len(self.datas))
+    #    self.table.setColumnCount(2)
+    #    self.table.setHorizontalHeaderLabels(["文件", "上传日期"])
+        self.table.setAlternatingRowColors(True)
+        self.table.setEditTriggers(QTableWidget.NoEditTriggers)
+        self.table.setSelectionBehavior(QTableWidget.SelectRows)
+        self.table.setSelectionMode(QTableWidget.SingleSelection)
+        selected = None
+        for row, data in enumerate(self.datas):
+            item = QTableWidgetItem(data.fname)
+            if current is not None and current == self.datas.index(data):
+                selected = item
+            item.__hash__ = self.datas.index(data)
+            self.table.setItem(row, 0, item)
+            item = QTableWidgetItem(data.acquired.toString(
+                                    userdata.DATEFORMAT))
+            item.setTextAlignment(Qt.AlignCenter)
+            self.table.setItem(row, 1, item)
+        self.table.resizeColumnsToContents()
+        if selected is not None:
+            selected.setSelected(True)
+            self.table.setCurrentItem(selected)
+            self.table.scrollToItem(selected)
+
+    def currentData(self):
+        row = self.table.currentRow()
+        if row > -1:
+            item = self.table.item(row, 0)
+            id = item.__hash__
+            return self.datas.dataFromid(id)
+        return None
+
     def add(self):
         account = self.uaccountLineEdit.text()
         acquired = QDate.currentDate()
@@ -54,6 +93,7 @@ class SimpleracsDlg(QDialog,
         self.datas.add(self.data)
 
     def updateUi(self):
+        self.updateTable()
         self.udebugLabel.setText(self.__debug)
 
 
