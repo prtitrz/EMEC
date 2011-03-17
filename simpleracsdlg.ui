@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>601</width>
-    <height>429</height>
+    <height>483</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -20,174 +20,441 @@
    <string>Myracs</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
-   <item row="0" column="0">
+   <item row="0" column="1">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
        <string>上传</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout">
+      <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>帐号</string>
+         </property>
+         <property name="buddy">
+          <cstring>uaccountLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="QLineEdit" name="uaccountLineEdit"/>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>@</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QComboBox" name="comboBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>163.com</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>126.com</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>gmail.com</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>密码</string>
+         </property>
+         <property name="buddy">
+          <cstring>upasswordLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="6" colspan="2">
+        <widget class="QLineEdit" name="upasswordLineEdit">
+         <property name="inputMethodHints">
+          <set>Qt::ImhNone</set>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::PasswordEchoOnEdit</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>帐号</string>
+         </property>
+         <property name="buddy">
+          <cstring>uaccountLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <widget class="QLineEdit" name="uaccountLineEdit_2"/>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>@</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QComboBox" name="comboBox_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>163.com</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>126.com</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>gmail.com</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>密码</string>
+         </property>
+         <property name="buddy">
+          <cstring>upasswordLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="6" colspan="2">
+        <widget class="QLineEdit" name="upasswordLineEdit_2">
+         <property name="echoMode">
+          <enum>QLineEdit::PasswordEchoOnEdit</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>帐号</string>
+         </property>
+         <property name="buddy">
+          <cstring>uaccountLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="QLineEdit" name="uaccountLineEdit_3"/>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>@</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QComboBox" name="comboBox_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>163.com</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>126.com</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>gmail.com</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="5">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>密码</string>
+         </property>
+         <property name="buddy">
+          <cstring>upasswordLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="6" colspan="2">
+        <widget class="QLineEdit" name="upasswordLineEdit_3">
+         <property name="echoMode">
+          <enum>QLineEdit::PasswordEchoOnEdit</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>帐号</string>
+         </property>
+         <property name="buddy">
+          <cstring>uaccountLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QLineEdit" name="uaccountLineEdit_4"/>
+       </item>
+       <item row="3" column="3">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>@</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="4">
+        <widget class="QComboBox" name="comboBox_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>163.com</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>126.com</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>gmail.com</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="5">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>密码</string>
+         </property>
+         <property name="buddy">
+          <cstring>upasswordLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="6" colspan="2">
+        <widget class="QLineEdit" name="upasswordLineEdit_4">
+         <property name="echoMode">
+          <enum>QLineEdit::PasswordEchoOnEdit</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>帐号</string>
+         </property>
+         <property name="buddy">
+          <cstring>uaccountLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1" colspan="2">
+        <widget class="QLineEdit" name="uaccountLineEdit_5"/>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>@</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="4">
+        <widget class="QComboBox" name="comboBox_5">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>163.com</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>126.com</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>gmail.com</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="5">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>密码</string>
+         </property>
+         <property name="buddy">
+          <cstring>upasswordLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="6" colspan="2">
+        <widget class="QLineEdit" name="upasswordLineEdit_5">
+         <property name="echoMode">
+          <enum>QLineEdit::PasswordEchoOnEdit</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="2">
         <spacer name="horizontalSpacer">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>119</width>
-           <height>20</height>
+           <width>84</width>
+           <height>24</height>
           </size>
          </property>
         </spacer>
        </item>
-       <item row="0" column="1">
+       <item row="5" column="2">
         <widget class="QPushButton" name="selectButton">
          <property name="text">
           <string>选择文件</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
+       <item row="5" column="4">
         <spacer name="horizontalSpacer_2">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>118</width>
-           <height>20</height>
+           <width>117</width>
+           <height>24</height>
           </size>
          </property>
         </spacer>
        </item>
-       <item row="1" column="0">
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>119</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="udebugLabel">
-         <property name="text">
-          <string>For debug</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <spacer name="horizontalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>118</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="2" column="0" colspan="3">
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>帐号</string>
-           </property>
-           <property name="buddy">
-            <cstring>uaccountLineEdit</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="uaccountLineEdit"/>
-         </item>
-        </layout>
-       </item>
-       <item row="3" column="0" colspan="3">
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>密码</string>
-           </property>
-           <property name="buddy">
-            <cstring>upasswordLineEdit</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="upasswordLineEdit"/>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_5">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </item>
-       <item row="4" column="0">
-        <spacer name="horizontalSpacer_6">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>119</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="4" column="1">
+       <item row="5" column="5" colspan="2">
         <widget class="QPushButton" name="uploadButton">
          <property name="text">
           <string>上传</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="2">
-        <spacer name="horizontalSpacer_7">
+       <item row="5" column="7">
+        <spacer name="horizontalSpacer_3">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>118</width>
-           <height>20</height>
+           <width>137</width>
+           <height>24</height>
           </size>
          </property>
         </spacer>
        </item>
-       <item row="5" column="1">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
+       <item row="6" column="0" colspan="8">
+        <widget class="QTableWidget" name="table_2">
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
          </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>66</height>
-          </size>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SingleSelection</enum>
          </property>
-        </spacer>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>400</number>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>400</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>文件</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>上传日期</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="7" column="1" colspan="7">
+        <widget class="QLabel" name="udebugLabel">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -195,7 +462,7 @@
       <attribute name="title">
        <string>下载</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_2">
+      <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
         <widget class="QLabel" name="label">
          <property name="text">
@@ -203,27 +470,14 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="1" colspan="4">
+       <item row="0" column="1" colspan="2">
         <widget class="QLabel" name="accountLabel">
          <property name="text">
           <string>TextLabel</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="6" colspan="2">
-        <spacer name="horizontalSpacer_10">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>221</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="0">
+       <item row="0" column="3">
         <widget class="QLabel" name="label_2">
          <property name="text">
           <string>密码</string>
@@ -233,56 +487,138 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1" colspan="4">
-        <widget class="QLineEdit" name="dpasswordLineEdit"/>
-       </item>
-       <item row="1" column="5" colspan="3">
-        <spacer name="horizontalSpacer_14">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>283</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="2" column="0" colspan="4">
-        <spacer name="horizontalSpacer_8">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>128</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="2" column="4">
-        <widget class="QLabel" name="ddebugLabel">
-         <property name="text">
-          <string>For debug</string>
+       <item row="0" column="4" colspan="2">
+        <widget class="QLineEdit" name="dpasswordLineEdit">
+         <property name="echoMode">
+          <enum>QLineEdit::PasswordEchoOnEdit</enum>
          </property>
         </widget>
        </item>
-       <item row="2" column="5" colspan="3">
-        <spacer name="horizontalSpacer_9">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string>帐号</string>
          </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>128</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
+        </widget>
        </item>
-       <item row="3" column="0" colspan="8">
+       <item row="1" column="1" colspan="2">
+        <widget class="QLabel" name="accountLabel_2">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string>密码</string>
+         </property>
+         <property name="buddy">
+          <cstring>dpasswordLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4" colspan="2">
+        <widget class="QLineEdit" name="dpasswordLineEdit_2">
+         <property name="echoMode">
+          <enum>QLineEdit::PasswordEchoOnEdit</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>帐号</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="QLabel" name="accountLabel_3">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="label_21">
+         <property name="text">
+          <string>密码</string>
+         </property>
+         <property name="buddy">
+          <cstring>dpasswordLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4" colspan="2">
+        <widget class="QLineEdit" name="dpasswordLineEdit_3">
+         <property name="echoMode">
+          <enum>QLineEdit::PasswordEchoOnEdit</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_22">
+         <property name="text">
+          <string>帐号</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QLabel" name="accountLabel_4">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QLabel" name="label_23">
+         <property name="text">
+          <string>密码</string>
+         </property>
+         <property name="buddy">
+          <cstring>dpasswordLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="4" colspan="2">
+        <widget class="QLineEdit" name="dpasswordLineEdit_4">
+         <property name="echoMode">
+          <enum>QLineEdit::PasswordEchoOnEdit</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_24">
+         <property name="text">
+          <string>帐号</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1" colspan="2">
+        <widget class="QLabel" name="accountLabel_5">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLabel" name="label_25">
+         <property name="text">
+          <string>密码</string>
+         </property>
+         <property name="buddy">
+          <cstring>dpasswordLineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="4" colspan="2">
+        <widget class="QLineEdit" name="dpasswordLineEdit_5">
+         <property name="echoMode">
+          <enum>QLineEdit::PasswordEchoOnEdit</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="7">
         <widget class="QTableWidget" name="table">
          <attribute name="horizontalHeaderDefaultSectionSize">
           <number>400</number>
@@ -320,58 +656,65 @@
          </column>
         </widget>
        </item>
-       <item row="4" column="0" colspan="2">
-        <spacer name="horizontalSpacer_12">
+       <item row="6" column="0" colspan="2">
+        <spacer name="horizontalSpacer_4">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
            <width>40</width>
-           <height>20</height>
+           <height>24</height>
           </size>
          </property>
         </spacer>
        </item>
-       <item row="4" column="2">
+       <item row="6" column="2">
         <widget class="QPushButton" name="deleteButton">
          <property name="text">
           <string>删除</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="3" colspan="3">
-        <spacer name="horizontalSpacer_11">
+       <item row="6" column="3" colspan="2">
+        <spacer name="horizontalSpacer_5">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>188</width>
-           <height>20</height>
+           <width>198</width>
+           <height>24</height>
           </size>
          </property>
         </spacer>
        </item>
-       <item row="4" column="6">
+       <item row="6" column="5">
         <widget class="QPushButton" name="downloadButton">
          <property name="text">
           <string>下载</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="7">
-        <spacer name="horizontalSpacer_13">
+       <item row="6" column="6">
+        <spacer name="horizontalSpacer_6">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>130</width>
-           <height>20</height>
+           <width>120</width>
+           <height>24</height>
           </size>
          </property>
         </spacer>
+       </item>
+       <item row="7" column="4">
+        <widget class="QLabel" name="ddebugLabel">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>

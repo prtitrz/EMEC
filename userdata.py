@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+
 """userdata handler
 """
 
@@ -63,20 +64,20 @@ class DataContainer(object):
                 raise IOError(fh.errorString())
             stream = QTextStream(fh)
             stream.setCodec(CODEC)
-            stream << ("<?xml version='1.0' encoding='{}'?>\n"
+            stream << ("<?xml version='1.0' encoding='{0}'?>\n"
                    "<!DOCTYPE DATAS>\n".format(CODEC))
             stream << "<DATAS VERSION='1.0'>\n"
 
-            for id in self.__datas:
-                data = self.__datas[id]
-                stream << ("<DATA LOCATION='{}' ACQUIRED='{}'>\n"
+            for data in self.__datas:
+            #    data = self.__datas[id]
+                stream << ("<DATA LOCATION='{0}' ACQUIRED='{1}'>\n"
                            .format(data.fname,
                                    data.acquired.toString(Qt.ISODate))) \
                        << "<ACCOUNT>" <<Qt.escape(data.account) \
                        << "</ACCOUNT>\n</DATA>\n"
             stream << "</DATAS>\n"
         except EnvironmentError as e:
-            error = "Failed to export: {}".format(e)
+            error = "Failed to export: {0}".format(e)
         finally:
             if fh is not None:
                 fh.close()
@@ -98,7 +99,7 @@ class DataContainer(object):
             if not parser.parse(input):
                 raise ValueError(handler.error)
         except (IOError, OSError, ValueError) as e:
-            error = "Failed to import: {}".format(e)
+            error = "Failed to import: {0}".format(e)
         finally:
             if fh is not None:
                 fh.close()
@@ -128,7 +129,7 @@ class SaxHandler(QXmlDefaultHandler):
             self.fname = attributes.value("LOCATION")
             ymd = attributes.value("ACQUIRED").split("-")
             if len(ymd) != 3:
-                raise ValueError("invalid acquired date {}".format(
+                raise ValueError("invalid acquired date {0}".format(
                         attributes.value("ACQUIRED")))
             self.acquired = QDate(int(ymd[0]), int(ymd[1]), int(ymd[2]))
         elif qName in ("ACCOUNT", ):
@@ -150,14 +151,14 @@ class SaxHandler(QXmlDefaultHandler):
             self.datas.add(Data(self.account, "", self.fname, self.acquired))
             self.clear()
         elif qName == "ACCOUNT":
-            self.account = self.text.strip()
+            self.account = self.text.trimmed()
     #    elif qName == "NOTES":
     #        self.notes = self.text.strip()
         return True
 
 
     def fatalError(self, exception):
-        self.error = "parse error at line {} column {}: {}".format(
+        self.error = "parse error at line {0} column {1}: {2}".format(
                 exception.lineNumber(), exception.columnNumber(),
                 exception.message())
         return False
