@@ -7,12 +7,70 @@ import re
 import getpass, poplib
 import email
 import imaplib
+import random
 
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 
-DEBUG = 0
+from PyQt4.QtCore import *
+
+DEBUG = 1
+
+class Worker(QThread):
+    def __init__(self, parent=None):
+        super(Worker, self).__init__(parent)
+        self.exiting = False
+
+    def __del__(self):
+        self.exiting = True
+        self.wait()
+
+    def render(self, account, filename, password, smtp_server, index):
+        self.account = account
+        self.filename = filename
+        self.password = password
+        self.smtp_server = smtp_server
+        self.index = index
+        self.start()
+
+    def run(self):
+        account = str(self.account)
+        # Create the enclosing (outer) message
+        outer = MIMEMultipart()
+        outer['Subject'] = 'mask{0}mask_{1}'.format(self.index, str(self.filename))
+        outer['To'] = account
+        outer['From'] = account
+        outer.preamble = 'You will not see this in a MIME-aware mail reader.\n'
+
+        ctype = 'application/octet-stream'
+        maintype, subtype = ctype.split('/', 1)
+
+        fp = open(str(self.filename), 'rb')
+        msg = MIMEBase(maintype, subtype)
+    #    msg.set_payload(encodebytes(fp.read()).decode())
+        msg.set_payload(fp.read())
+        fp.close()
+        encoders.encode_base64(msg)
+    #    msg.add_header('Content-Transfer-Encoding', 'base64')
+        msg.add_header('Content-Disposition', 'attachment', filename=os.path.basename(str(self.filename)))
+        outer.attach(msg)
+        # Send the message
+        composed = outer.as_string()
+        if DEBUG:
+            fp = open("./output", 'w')
+            fp.write(composed)
+            fp.close()
+        else:
+            s = smtplib.SMTP()
+            s.set_debuglevel(DEBUG)
+            s.connect(self.smtp_server)
+            s.login(account, self.password)
+            s.sendmail(account, account, composed)
+            s.quit()
+
+
+
 
 def send(account, filename, password, smtp_server, index):
     """generate a mime message
@@ -20,7 +78,7 @@ def send(account, filename, password, smtp_server, index):
     account = str(account)
     # Create the enclosing (outer) message
     outer = MIMEMultipart()
-    outer['Subject'] = '{0}mask_{1}'.format(index, str(filename))
+    outer['Subject'] = 'mask{0}mask_{1}'.format(index, str(filename))
     outer['To'] = account
     outer['From'] = account
     outer.preamble = 'You will not see this in a MIME-aware mail reader.\n'
@@ -40,7 +98,9 @@ def send(account, filename, password, smtp_server, index):
     # Send the message
     composed = outer.as_string()
     if DEBUG:
-        fp = open("./output", 'w')
+        FNAME = "./output" + str(random.randint(0, 100))
+        #fp = open("./output", 'w')
+        fp = open(FNAME, 'w')
         fp.write(composed)
         fp.close()
     else:
@@ -88,9 +148,6 @@ def receive_pop():
             fp.write(part.get_payload(decode=True))
             fp.close()
 
-#username = 'forpythontest@163.com'
-#password = 'a123456'
-#mask = "xml"
 def receive_imap(account, password, mask, imap_server):
 
     M = imaplib.IMAP4_SSL(imap_server)
