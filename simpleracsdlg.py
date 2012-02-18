@@ -14,7 +14,7 @@ import fec
 CODEC = "utf-8"
 suffix = ["@163.com", "@126.com", "@gmail.com"]
 smtp_server = ["smtp.163.com", "smtp.126.com"]
-imap_server = ["imap.163.com"]
+imap_server = ["imap.163.com", "imap.126.com"]
 
 class SimpleracsDlg(QDialog,
         ui_simpleracsdlg.Ui_SimpleracsDlg):
@@ -26,7 +26,6 @@ class SimpleracsDlg(QDialog,
         self.datas = userdata.DataContainer()
         self.datas.importSAX("./data.xml")
         self.__debug = ""
-        #self.uploadButton.setEnabled(False)
         self.setupUi(self)
         self.updateUi()
 
@@ -39,6 +38,7 @@ class SimpleracsDlg(QDialog,
         if fname:
             self.__debug = fname
             self.udebugLabel.setText(self.__debug)
+        self.updateUi()
 
     @pyqtSignature("")
     def on_uploadButton_clicked(self):
@@ -55,13 +55,6 @@ class SimpleracsDlg(QDialog,
         index = self.datas.index(data)
         password = [self.anyObject(4, i).text() for i in range(5)]
         data.setpassword(password)
-        #account = data.account
-        #maintype, subtype = account.split('/', 1)
-        #account = maintype + suffix[int(subtype)]
-        #password = self.dpasswordLineEdit.text()
-        #imap = imap_server[int(subtype)]
-        #mask = 'mask' + str(self.datas.index(data)) + 'mask'
-        #handle_email.receive_imap(account, password, mask, imap)
         self.thread.render("download", data, index)
 
     @pyqtSignature("QString")
@@ -211,7 +204,11 @@ class SimpleracsDlg(QDialog,
 
     def updateUi(self):
         self.updateTable()
-        #self.updateTable2()
+        self.updateTable2()
+        self.deleteButton.hide()
+        #self.tabWidget.removeTab(2)
+        #self.label_26.hide()
+        #self.cancelButton.hide()
         self.udebugLabel.setText(self.__debug)
         enable = self.check_enable()
         self.uploadButton.setEnabled(enable)

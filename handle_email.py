@@ -48,7 +48,7 @@ class Worker(QThread):
 
         fp = open(str(self.filename), 'rb')
         msg = MIMEBase(maintype, subtype)
-    #    msg.set_payload(encodebytes(fp.read()).decode())
+        #msg.set_payload(encodebytes(fp.read()).decode())
         msg.set_payload(fp.read())
         fp.close()
         encoders.encode_base64(msg)

@@ -14,7 +14,7 @@ PREFIX = "test"
 SUFFIX = ".fec"
 MAILSUFFIX = ["@163.com", "@126.com", "@gmail.com"]
 SMPT_SERVER = ["smtp.163.com", "smtp.126.com"]
-IMAP_SERVER = ["imap.163.com"]
+IMAP_SERVER = ["imap.163.com", "imap.126.com"]
 
 from PyQt4.QtCore import *
 
@@ -50,7 +50,16 @@ class Worker(QThread):
                 password = self.data.password[i]
                 smtp = SMPT_SERVER[int(subtype)]
                 handle_email.send(account, sharefs[i], password, smtp, self.index)
+                os.remove(sharefs[i])
         elif self.choose == "download":
+            for i in range(5):
+                account = self.data.account[i]
+                maintype, subtype = account.split('/', 1)
+                account = maintype + MAILSUFFIX[int(subtype)]
+                password = self.data.password[i]
+                imap = IMAP_SERVER[int(subtype)]
+                mask = 'mask' + str(self.index) + 'mask'
+                handle_email.receive_imap(account, password, mask, imap)
             self.decode(self.filename)
 
 
